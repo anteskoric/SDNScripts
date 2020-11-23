@@ -1,8 +1,9 @@
 import os
-import random as rm
+#import random as rm
 #import socket
 #import struct
 
+#The packages will be loss because the network will filter the ips that are not in the network
 call_size = 50
 packages = "1"
 data_size = "5"
