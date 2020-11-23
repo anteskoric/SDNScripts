@@ -8,7 +8,7 @@ packages = "1"
 data_size = "5"
 dest_ips = ["10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6", "10.0.0.8", "10.0.0.18", "10.0.0.42", "10.0.0.43",
        "10.0.0.44"]
-sudoPassword = 'pmthtsfk'
+sudoPassword = ''
 
 for x in range(0, call_size):
     position = rm.randint(0, 10)
