@@ -3,7 +3,7 @@ import random as rm
 #import socket
 #import struct
 
-call_size = 500
+call_size = 50
 packages = "1"
 data_size = "5"
 dest_ips = ["10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6", "10.0.0.8", "10.0.0.18", "10.0.0.42", "10.0.0.43",
@@ -11,7 +11,7 @@ dest_ips = ["10.0.0.1", "10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.
 sudoPassword = ''
 
 for x in range(0, call_size):
-    position = rm.randint(0, 10)
-    dest_ip = dest_ips[position]
     #random_src_ip = socket.inet_ntoa(struct.pack('>I', rm.randint(1, 0xffffffff)))
-    os.system('echo %s|sudo -S %s' % (sudoPassword, "hping3 -c " + packages + " -p 7 " + "-d " + data_size + " --rand-source " + " " + dest_ip))
+    for i in range(0, 10):
+        dest_ip = dest_ips[i]
+        os.system('echo %s|sudo -S %s' % (sudoPassword, "hping3 -c " + packages + " -p 7 " + "-d " + data_size + " --rand-source " + " " + dest_ip))
