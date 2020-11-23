@@ -14,4 +14,4 @@ for x in range(0, call_size):
     for i in range(0, 10):
         dest_ip = dest_ips[i]
         #"hping3 -c " + packages + " -p 7 " + "-d " + data_size + " --rand-source " + " " + dest_ip
-        os.system('echo %s|sudo -S %s' % (sudoPassword, "ping -I " + random_src_ip + " " + dest_ip))
+        os.system('echo %s|sudo -S %s' % (sudoPassword, "ping -c 1 -I " + random_src_ip + " " + dest_ip))
