@@ -2,6 +2,7 @@ import os
 import random as rm
 
 #In this script the controller will be attacked
+#TODO change the script, the link was down and not the controller
 call_size = 500
 packages = "20"
 data_size = "120"
