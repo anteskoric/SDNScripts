@@ -1,6 +1,6 @@
 import os
 
-# This script will overload the link, a lot of "big" packages will be send
+# This script will flood the controller with packages
 
 packages = "20"
 data_size = "120"
