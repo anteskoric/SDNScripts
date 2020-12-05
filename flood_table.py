@@ -3,9 +3,8 @@ import os
 #import socket
 #import struct
 
-#The packages will be send from random ip addresses to random ip addresses in the network
-#In this script ping packages will be send to the destination ip
-#The packages will be loss because the network will filter the ips that are not in the network
+#This script is working
+#TODO test it with 1500 packages
 call_size = 50
 packages = "1"
 data_size = "5"
