@@ -1,4 +1,8 @@
 import os
+
+# This script was successful but the link was not down
+# The link can process so much packages and is therefore not down
+
 packages = "20"
 data_size = "120"
 dest_ips_left = ["10.0.0.1", "10.0.0.2", "10.0.0.6", "10.0.0.8", "10.0.0.42"]

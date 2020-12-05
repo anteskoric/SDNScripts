@@ -1,6 +1,7 @@
 import os
 
-# This script will flood the controller with packages
+# This script was successful
+# This script will flood the controller with packages and the controller will be down
 
 packages = "20"
 data_size = "120"
