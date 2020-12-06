@@ -5,7 +5,7 @@ import os
 # import struct
 
 # This script is working
-# TODO test it with 1500 packages
+# This script is to slow for flooding the table, use instead flood_Table_one_dest_host.py script
 call_size = 500
 packages = "1"
 data_size = "5"
