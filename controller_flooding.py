@@ -10,4 +10,4 @@ dest_ip = "10.0.0.3"
 sudoPassword = ''
 
 os.system('echo %s|sudo -S %s' % (
-sudoPassword, "hping3 --flood -c " + packages + " -p 7 " + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))
+sudoPassword, "hping3 --fast -c " + packages + " -p 7 " + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))
