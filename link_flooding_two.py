@@ -14,4 +14,4 @@ for i in range(0, len(dest_ips_right) - 1):
     dest_ip = dest_ips_left[i]
     sourc_ip = dest_ips_right[i]
     os.system('echo %s|sudo -S %s' % (
-    sudoPassword, "hping3 --fast " + " -1 -p 7 " + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))
+    sudoPassword, "hping3 --fast -c " + packages + " -1 -p 7 " + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))

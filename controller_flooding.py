@@ -3,7 +3,7 @@ import os
 # This script was successful
 # This script will flood the controller with packages and the controller will be down
 
-packages = "20"
+packages = "2000"
 data_size = "120"
 sourc_ip = "10.0.0.42"
 dest_ip = "10.0.0.3"
