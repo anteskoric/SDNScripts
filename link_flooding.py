@@ -1,10 +1,12 @@
 import os
 
+# This script is working, needs to be tested
 packages = "2000"
 data_size = "120"
 sourc_ip = "10.0.0.42"
-dest_ip = "224.0.2.0"
+dest_ip = "224.0.2.4"
 sudoPassword = ''
 
+#sudo hping3 -2 --destport 51004 --baseport 50005 -k -I eno1 --fast -c 10 -d 120 -a 10.0.0.42 224.0.2.4
 os.system('echo %s|sudo -S %s' % (
-sudoPassword, "hping3 --fast -c " + packages + " -p 6 " + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))
+sudoPassword, "hping3 -2 --destport 51004 --baseport 50005 -k -I eno1 --fast -c " + packages + "-d " + data_size + " -a " + sourc_ip + " " + dest_ip))
