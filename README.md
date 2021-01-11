@@ -4,6 +4,12 @@ This scripts are used in the HAW Hamburg lab for pen testing of the HAW Hamburg 
 
 ## Usage
 
+The scripts use [hping3](https://linux.die.net/man/8/hping3) to send the packages, therefore, you should install the tool on the machine where you run the scripts.
+
+Use Python 3.7.5 to execute the scripts.
+
+YOu should start the scripts on the core-NUC2 Raspberry Pi, with sudo rights.
+
 ```python
 sudo python {script_name}.py
 ```
@@ -15,7 +21,6 @@ flood_table.py:
 The SDN controller creates a new reactive flow when a new connection between two IP addresses has been created, e.g. by a ping packet, as the white list only allows this.\
 We know that the switch can have 2000 flows in the table at the same time, this means that an attack can be performed that "overfills" this table.\
 Existing reactive flows will be dropped from the table, this will cause the communication from the remote reactive flows to stop working and the one reactive flow cannot be installed or created.
-
 
 link_flooding.py:
 
