@@ -1,6 +1,5 @@
 import os
 
-# This script was successful
 # This script is used to flood the flow table
 # Use over 2000 packages to kill the network
 data_size = "5"

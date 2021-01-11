@@ -1,6 +1,5 @@
 import os
 
-# This script was successful
 # This script will flood the controller with packages and the controller will be down
 # Use over 2000000 packages to kill the network
 packages = "2000"

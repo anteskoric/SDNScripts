@@ -7,6 +7,7 @@ This scripts are used in the HAW Hamburg lab for pen testing of the HAW Hamburg 
 ```python
 sudo python {script_name}.py
 ```
+Also see the comments in the scripts for more details, and be careful while using flood and faster!
 
 ## Documentation
 flood_table.py:
