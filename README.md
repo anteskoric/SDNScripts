@@ -6,12 +6,12 @@ This scripts are used in the HAW Hamburg lab for pen testing of the HAW Hamburg 
 
 The scripts use [hping3](https://linux.die.net/man/8/hping3) to send the packages, therefore, you should install the tool on the machine where you run the scripts.
 
-Use Python 3.7.5 to execute the scripts.
+Use Python 2.7.17 or 3.6.9 to execute the scripts.
 
 You should start the scripts on the core-NUC2, with sudo rights.
 
 ```python
-sudo python {script_name}.py
+sudo python3 {script_name}.py
 ```
 Also see the comments in the scripts for more details, and be careful while using flood and faster!
 
