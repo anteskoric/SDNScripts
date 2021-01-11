@@ -8,7 +8,7 @@ The scripts use [hping3](https://linux.die.net/man/8/hping3) to send the package
 
 Use Python 3.7.5 to execute the scripts.
 
-YOu should start the scripts on the core-NUC2 Raspberry Pi, with sudo rights.
+You should start the scripts on the core-NUC2 Raspberry Pi, with sudo rights.
 
 ```python
 sudo python {script_name}.py
