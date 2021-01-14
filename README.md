@@ -1,34 +1,38 @@
 ## SDN Pen Testing HAW Hamburg
 
-This scripts are used in the HAW Hamburg lab for pen testing of the HAW Hamburg networking test car.
+The scripts are used in the HAW Hamburg lab for pen testing of the HAW Hamburg networking test car.
 
 ## Usage
 
-The scripts use [hping3](https://linux.die.net/man/8/hping3) to send the packages, therefore, you should install the tool on the machine where you run the scripts.
+The scripts use [hping3](https://linux.die.net/man/8/hping3) to send the packages, therefore, you should install the tool on the machine where you run the scripts. It should be inculed as standard in most distributions.
 
 Use Python 2.7.17 or 3.6.9 to execute the scripts.
 
-You should start the scripts on the core-NUC2, with sudo rights.
+It is necessary to have sudo rights for script execution.
+We recommend to run the scripts on the core-NUC2.
 
+#### Usage example:
 ```python
 sudo python3 {script_name}.py
 ```
-Also see the comments in the scripts for more details, and be careful while using flood and faster!
+For more details see the comments in the scripts, and be careful while using *faster* and *flood*!
 
 ## Documentation
 *flood_table.py*:
 
 
 ### Scenario:
-The SDN controller creates a new reactive flow when a new connection between two IP addresses has been created, e.g. by a ping packet, as the white list only allows this.\
-We know that the switch can have 2000 flows in the table at the same time, this means that an attack can be performed that "overfills" this table.\
-Existing reactive flows will be dropped from the table, this will cause the communication from the remote reactive flows to stop working and the one reactive flow cannot be installed or created.
+The SDN controller creates a new reactive flow when a new connection between two IP addresses has been requested, e.g. by a ping packet, as the white list only allows this.\
+We know that the switch can have a maximum of 2000 flows in the table at the same time, this means that an attack can be performed that "overfills" this table.\
+Existing reactive flows will be dropped from the table after 30 seconds of inactivity.
+If the table is full, no new flows can be added.
 
 ### Observations:
-An increase of entries on the Reactive Flow Rules table can be observed, quickly rising to a number beyond the maximum number of rules that can be processed by this system. Similarly the Topology view will show at first a strain on established connections before some of them fail, resulting in a loss of communication. After a small amount of time seemingly random connections can be seen being established, deviating from the pre-attack layout. New connections can only be established once there is actually room in the flow table again.\
+An increase of entries on the "Reactive Flow Rules" table can be observed, quickly rising to a number beyond the maximum number of rules that can be processed by this system. Similarly the Topology view will show at first a strain on established connections before some of them fail, resulting in a loss of communication. After a small amount of time seemingly random connections can be seen being established, deviating from the pre-attack layout. New connections can only be established once there is actually room in the flow table again.\
 Due to the load imposed on the system, the ONOS UI may lag or even crash and/or the browser may hang or crash.\
 After either the reactive rules have timed out or have been manually cleared, the system will go  back to normal operation.
 
+***
 *link_flooding.py*:
 
 ### Scenario:
@@ -40,6 +44,7 @@ The packages can no longer be sent over the link.
 A traffic increase can be observed on both the link between switches, the connection between the sending network unit and the switch it is connected to as well as the receiving network unit and the switch it is connected to.
 The more packages are send, the higher the load on these three connections. As such it its possible to overload or put a strain on the link if more than one network unit is sending an increased amount of traffic.
 
+***
 *controller_flooding.py*:
 
 ### Scenario:
